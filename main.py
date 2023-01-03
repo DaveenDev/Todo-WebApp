@@ -21,6 +21,10 @@ def complete_todo():
 st.title("My Todo App")
 st.subheader("My first web app using python")
 
+st.text_input(label="New todo",
+              placeholder="Input new todo here ",
+              on_change=add_todo, key="new_todo",
+              label_visibility="visible")
 
 st.write("List of todos:")
 
@@ -33,9 +37,6 @@ for index, todo in enumerate(todos):
         del st.session_state[index]
         st.experimental_rerun()
 
-st.text_input(label="New todo",
-              placeholder="Input new todo here ",
-              on_change=add_todo, key="new_todo",
-              label_visibility="visible")
+
 
 #st.session_state
